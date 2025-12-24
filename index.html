@@ -72,6 +72,30 @@
             width: auto;
         }
 
+        .header-cta {
+            display: none;
+            padding: 10px 24px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-left: auto;
+            margin-right: 16px;
+            white-space: nowrap;
+        }
+
+        .header-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+        }
+
+        .header.scrolled .header-cta {
+            display: block;
+        }
+
         .hamburger {
             width: 32px;
             height: 32px;
@@ -133,7 +157,10 @@
         }
 
         .nav-link:hover {
-            color: var(--accent);
+            background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .nav-link.cta {
@@ -201,7 +228,19 @@
         /* How It Works */
         .how-it-works-section {
             padding: 80px 0;
-            background: var(--bg-secondary);
+            background: linear-gradient(135deg, #f0f0ff 0%, #f5f0ff 100%);
+            position: relative;
+        }
+
+        .how-it-works-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 80% 50%, rgba(139, 123, 224, 0.08) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .section-title {
@@ -212,6 +251,8 @@
             text-align: center;
             margin-bottom: 60px;
             color: var(--text-primary);
+            position: relative;
+            z-index: 1;
         }
 
         .steps-grid {
@@ -220,6 +261,8 @@
             gap: 48px;
             max-width: 1000px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .step-item {
@@ -276,22 +319,29 @@
         .result-banner {
             margin-top: 60px;
             padding: 32px;
-            background: linear-gradient(135deg, #fafaff 0%, #faf5ff 100%);
+            background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
             border-radius: 16px;
             text-align: center;
-            border: 1px solid var(--border);
+            border: none;
+            box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+            position: relative;
+            z-index: 1;
         }
 
         .result-banner-text {
             font-size: 20px;
             font-weight: 600;
-            color: var(--text-primary);
+            color: white;
             line-height: 1.5;
         }
 
         .result-banner-highlight {
-            color: var(--accent);
+            color: white;
             font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: rgba(255, 255, 255, 0.5);
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
         }
 
         /* Comparison Grid */
@@ -378,13 +428,27 @@
         /* Intelligence Callout */
         .intelligence-section {
             padding: 80px 0;
-            background: linear-gradient(135deg, #fafaff 0%, #faf5ff 100%);
+            background: linear-gradient(135deg, #f0f0ff 0%, #f5f0ff 100%);
+            position: relative;
+        }
+
+        .intelligence-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .intelligence-content {
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
         .intelligence-title {
@@ -529,8 +593,9 @@
         }
 
         .benefit-item:hover {
-            border-color: var(--success);
-            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.08);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 123, 224, 0.05) 100%);
+            border-color: var(--accent);
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.15);
             transform: translateY(-2px);
         }
 
@@ -538,13 +603,14 @@
             width: 32px;
             height: 32px;
             border-radius: 50%;
-            background: var(--success);
+            background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 18px;
             font-weight: 700;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
         }
 
         .benefit-text {
@@ -718,6 +784,40 @@
             transform: translateY(0);
         }
 
+        .cta-button-small {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 10px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+        }
+
+        .cta-button-small:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .cta-button-small:active {
+            transform: translateY(0);
+        }
+
+        .mini-cta-section {
+            text-align: center;
+            padding: 60px 0;
+            background: var(--bg-primary);
+            border-top: 2px solid;
+            border-image: linear-gradient(90deg, transparent, var(--accent), var(--purple), transparent) 1;
+        }
+
         .cta-subtext {
             margin-top: 24px;
             font-size: 15px;
@@ -753,6 +853,12 @@
             background: var(--bg-secondary);
             border-top: 1px solid var(--border);
             text-align: center;
+        }
+
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), var(--purple), transparent);
+            margin: 0;
         }
 
         .legal-text {
@@ -882,6 +988,7 @@
                  alt="Portune" 
                  class="logo"
                  onerror="this.onerror=null; this.src='portune_vertical.png'; console.error('Logo failed to load. Check filename case sensitivity.');">
+            <a href="#demo" class="header-cta">Book a Demo</a>
             <div class="hamburger" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
@@ -909,9 +1016,9 @@
                 Into a <span class="gradient">Technical Expert</span>
             </h1>
             <p class="hero-subheadline">
-                <span class="hero-subheadline-line">Achieve seller independence without stalling for presales.</span>
+                <span class="hero-subheadline-line">Achieve seller independence. Close without stalling for presales.</span>
                 <span class="hero-subheadline-line">Unlock 3-5x faster deal velocity.</span>
-                <span class="hero-subheadline-line">Close more deals with unprecedented buyer visibility.</span>
+                <span class="hero-subheadline-line">Close more deals with real-time buyer intelligence.</span>
             </p>
         </div>
     </section>
@@ -980,21 +1087,27 @@
                     </div>
                     
                     <div class="comparison-row">
-                        <div class="comparison-item before">Buyer friction from slow presales responses</div>
+                        <div class="comparison-item before">Buyer friction, delayed responses</div>
                         <div class="comparison-arrow">→</div>
-                        <div class="comparison-item after">Instant technical guidance in every conversation</div>
+                        <div class="comparison-item after">Deliver valuable technical guidance in every conversation</div>
                     </div>
                     
                     <div class="comparison-row">
                         <div class="comparison-item before">"Let me check with engineering..."</div>
                         <div class="comparison-arrow">→</div>
-                        <div class="comparison-item after">"Here's your solution."</div>
+                        <div class="comparison-item after">"Let me answer your questions, and recommend a solution."</div>
                     </div>
                     
                     <div class="comparison-row">
-                        <div class="comparison-item before">Deals stall due to lack of technical proficiency in critical moments</div>
+                        <div class="comparison-item before">Low buyer confidence, weak purchase intent</div>
                         <div class="comparison-arrow">→</div>
-                        <div class="comparison-item after">Sellers advance deals with valuable technical guidance</div>
+                        <div class="comparison-item after">High buyer confidence, strong purchase intent</div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-item before">Deals stall in critical moments</div>
+                        <div class="comparison-arrow">→</div>
+                        <div class="comparison-item after">close faster. beat the competition.</div>
                     </div>
 
                     <div class="comparison-row">
@@ -1004,9 +1117,9 @@
                     </div>
                     
                     <div class="comparison-row">
-                        <div class="comparison-item before">40% of deals stall in presales</div>
+                        <div class="comparison-item before">38% of deals stall in presales</div>
                         <div class="comparison-arrow">→</div>
-                        <div class="comparison-item after">2x win rate increase</div>
+                        <div class="comparison-item after">Increase win rate 2x</div>
                     </div>
                 </div>
             </div>
@@ -1055,6 +1168,8 @@
         </p>
     </div>
 
+    <div class="section-divider"></div>
+
     <!-- Use Case Example -->
     <section class="use-case-section" id="use-case">
         <div class="container">
@@ -1083,6 +1198,8 @@
             </div>
         </div>
     </section>
+
+    <div class="section-divider"></div>
 
     <!-- Benefits -->
     <section class="benefits-section" id="results">
@@ -1214,6 +1331,23 @@
             if (!isClickInsideMenu && !isClickOnHamburger && menu.classList.contains('active')) {
                 closeMenu();
             }
+        });
+
+        // Show/hide header CTA on scroll
+        let lastScroll = 0;
+        const header = document.querySelector('.header');
+        
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset;
+            
+            // Show CTA after scrolling past hero (approximately 600px)
+            if (currentScroll > 600) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            lastScroll = currentScroll;
         });
     </script>
 </body>
