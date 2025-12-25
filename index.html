@@ -68,7 +68,7 @@
         }
 
         .logo {
-            height: 70px;
+            height: 85px;
             width: auto;
         }
 
@@ -225,6 +225,14 @@
             margin-bottom: 0;
         }
 
+        .hero-bullet {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 12px;
+        }
+
         /* How It Works */
         .how-it-works-section {
             padding: 80px 0;
@@ -257,12 +265,16 @@
 
         .steps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 48px;
             max-width: 1000px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
+        }
+
+        .step-item:nth-child(4) {
+            grid-column: 2 / 3;
         }
 
         .step-item {
@@ -364,16 +376,64 @@
             background: var(--bg-secondary);
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 40px;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .comparison-grid::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 50%;
+            box-shadow: -4px 0 16px rgba(99, 102, 241, 0.2);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .comparison-category {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 20px 24px;
+            background: linear-gradient(135deg, #e8e8ff 0%, #f0e8ff 100%);
+            color: #5b4b8a;
+            border-top: 2px solid rgba(99, 102, 241, 0.15);
+            margin-top: 0;
+        }
+
+        .comparison-category:first-child {
+            border-top: none;
+        }
+
+        .comparison-category-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        .comparison-item.after {
+            color: var(--text-primary);
+            font-weight: 600;
+            text-align: left;
+            background: linear-gradient(135deg, #f0f0ff 0%, #f5f0ff 100%);
+            text-shadow: none;
         }
 
         .comparison-header {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 32px;
-            margin-bottom: 32px;
-            padding-bottom: 24px;
-            border-bottom: 2px solid var(--border);
+            gap: 0;
+            margin-bottom: 0;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
         }
 
         .comparison-column-header {
@@ -382,52 +442,64 @@
             text-transform: uppercase;
             letter-spacing: 0.08em;
             text-align: center;
+            padding: 24px;
         }
 
         .comparison-column-header.before {
             color: var(--text-secondary);
+            background: #fafafa;
         }
 
         .comparison-column-header.after {
-            color: var(--accent);
+            color: #5b4b8a;
+            background: linear-gradient(135deg, #f0f0ff 0%, #f5f0ff 100%);
         }
 
         .comparison-row {
             display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            gap: 24px;
-            padding: 24px 0;
-            border-bottom: 1px solid var(--border);
-            align-items: center;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            align-items: stretch;
+            position: relative;
         }
 
-        .comparison-row:last-child {
+        .comparison-row:last-child .comparison-item {
             border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .comparison-arrow {
-            color: var(--accent);
-            font-size: 24px;
-            font-weight: 300;
         }
 
         .comparison-item {
             font-size: 18px;
             font-weight: 500;
-            line-height: 1.5;
-            text-align: center;
+            line-height: 1.6;
+            padding: 28px 32px;
+            position: relative;
+            z-index: 1;
+            min-height: 120px;
         }
 
         .comparison-item.before {
             color: var(--text-secondary);
-            text-align: right;
+            text-align: left;
+            background: linear-gradient(to right, #ffffff, #fafafa);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+            border-right: 1px solid rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .comparison-item strong {
+            font-weight: 700;
         }
 
         .comparison-item.after {
             color: var(--text-primary);
             font-weight: 600;
             text-align: left;
+            background: linear-gradient(135deg, #f0f0ff 0%, #f5f0ff 100%);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
         }
 
         /* Intelligence Callout */
@@ -492,10 +564,9 @@
             line-height: 1.5;
         }
 
-        .intelligence-bullet {
-            color: var(--accent);
-            font-weight: 700;
-            font-size: 20px;
+        .intelligence-bullet-icon {
+            width: 24px;
+            height: 24px;
             flex-shrink: 0;
         }
 
@@ -605,17 +676,14 @@
         }
 
         .benefit-check {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            font-weight: 700;
-            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+            width: 50px;
+            height: 50px;
+            flex-shrink: 0;
+        }
+
+        .benefit-check svg {
+            width: 100%;
+            height: 100%;
         }
 
         .benefit-text {
@@ -641,35 +709,39 @@
         .trust-badge {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            padding: 16px 24px;
-            background: linear-gradient(135deg, #fafaff 0%, #faf5ff 100%);
-            border: 1px solid var(--border);
+            gap: 16px;
+            padding: 20px 32px;
+            background: white;
+            border: 2px solid;
+            border-image: linear-gradient(135deg, var(--accent), var(--purple)) 1;
             border-radius: 12px;
-            margin-bottom: 24px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.08);
         }
 
         .trust-badge-icon {
-            width: 24px;
-            height: 24px;
-            background: var(--accent);
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--accent), var(--purple));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-weight: 700;
-            font-size: 14px;
+            font-size: 18px;
+            flex-shrink: 0;
         }
 
         .trust-badge-text {
-            font-size: 15px;
-            font-weight: 600;
+            font-size: 17px;
+            font-weight: 700;
             color: var(--text-primary);
+            letter-spacing: 0.02em;
         }
 
         .trust-text {
-            font-size: 17px;
+            font-size: 18px;
             color: var(--text-secondary);
             line-height: 1.6;
         }
@@ -912,41 +984,52 @@
                 gap: 48px;
             }
 
+            .step-item:nth-child(4) {
+                grid-column: 1;
+            }
+
             .comparison-grid {
-                padding: 24px;
+                padding: 0;
+            }
+
+            .comparison-grid::after {
+                display: none;
             }
 
             .comparison-header {
-                gap: 16px;
-                margin-bottom: 24px;
+                gap: 0;
+                margin-bottom: 0;
             }
 
             .comparison-column-header {
                 font-size: 12px;
+                padding: 16px;
             }
 
             .comparison-row {
                 grid-template-columns: 1fr;
-                gap: 12px;
-                padding: 20px 0;
-            }
-
-            .comparison-arrow {
-                display: none;
+                gap: 0;
             }
 
             .comparison-item {
                 font-size: 16px;
                 text-align: center !important;
+                padding: 24px 16px;
+                min-height: auto;
+                justify-content: center !important;
             }
 
             .comparison-item.before {
-                padding-bottom: 8px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                border-right: none;
             }
 
             .comparison-item.after {
-                padding-top: 8px;
-                border-top: 1px solid var(--border);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .comparison-row:last-child .comparison-item.after {
+                border-bottom: none;
             }
 
             .intelligence-list {
@@ -993,7 +1076,7 @@
                  alt="Portune" 
                  class="logo"
                  onerror="this.onerror=null; this.src='portune_vertical.png'; console.error('Logo failed to load. Check filename case sensitivity.');">
-            <a href="#demo" class="header-cta">Book a Demo</a>
+            <a href="https://calendly.com/portune-info/30min" class="header-cta">Book a Demo</a>
             <div class="hamburger" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
@@ -1006,7 +1089,6 @@
     <nav class="nav-menu" id="navMenu">
         <a href="#how-it-works" class="nav-link" onclick="closeMenu()">How It Works</a>
         <a href="#benefits" class="nav-link" onclick="closeMenu()">Benefits</a>
-        <a href="#use-case" class="nav-link" onclick="closeMenu()">Use Case</a>
         <a href="#results" class="nav-link" onclick="closeMenu()">Results</a>
         <a href="#contact" class="nav-link" onclick="closeMenu()">Contact Us</a>
         <a href="#demo" class="nav-link cta" onclick="closeMenu()">Book a Demo</a>
@@ -1037,7 +1119,7 @@
                 <div class="step-item">
                     <div class="step-number">1</div>
                     <div class="step-title">Requirements Discovery</div>
-                    <div class="step-desc">Seller captures client needs through AI-guided conversation</div>
+                    <div class="step-desc">Seller captures client needs through AI-guided conversation<br>&nbsp;</div>
                     <div class="step-fragment">
                         <img src="1chat_blur.png" alt="AI Requirements Assistant">
                     </div>
@@ -1070,60 +1152,70 @@
                     </div>
                 </div>
             </div>
-
-            <div class="result-banner">
-                <p class="result-banner-text">
-                    Achieve <span class="result-banner-highlight">seller independence</span> and <span class="result-banner-highlight">3-5x faster deal velocity</span>
-                </p>
-            </div>
         </div>
     </section>
 
     <!-- Comparison -->
     <section class="comparison-section" id="benefits">
         <div class="container">
-            <h2 class="section-title">The Transformation</h2>
+            <h2 class="section-title">Power Up Your Sales Team with Portune</h2>
             
             <div class="comparison-wrapper">
                 <div class="comparison-grid">
                     <div class="comparison-header">
-                        <div class="comparison-column-header before">Without Portune</div>
-                        <div class="comparison-column-header after">With Portune</div>
+                        <div class="comparison-column-header before">WITHOUT PORTUNE</div>
+                        <div class="comparison-column-header after">WITH PORTUNE</div>
                     </div>
                     
-                    <div class="comparison-row">
-                        <div class="comparison-item before">Buyer friction, delayed responses</div>
-                        <div class="comparison-arrow">→</div>
-                        <div class="comparison-item after">Deliver valuable technical guidance in every conversation</div>
+                    <div class="comparison-category">
+                        <span>Sales Power Up</span>
                     </div>
                     
                     <div class="comparison-row">
                         <div class="comparison-item before">"Let me check with engineering..."</div>
-                        <div class="comparison-arrow">→</div>
                         <div class="comparison-item after">"Let me answer your questions, and recommend a solution."</div>
                     </div>
                     
                     <div class="comparison-row">
                         <div class="comparison-item before">Low buyer confidence, weak purchase intent</div>
-                        <div class="comparison-arrow">→</div>
                         <div class="comparison-item after">High buyer confidence, strong purchase intent</div>
-                    </div>
-                    
-                    <div class="comparison-row">
-                        <div class="comparison-item before">Deals stall in critical moments</div>
-                        <div class="comparison-arrow">→</div>
-                        <div class="comparison-item after">close faster. beat the competition.</div>
                     </div>
 
                     <div class="comparison-row">
                         <div class="comparison-item before">No visibility into buyer readiness or blockers</div>
-                        <div class="comparison-arrow">→</div>
                         <div class="comparison-item after">Know purchase readiness and commercial intent in real-time</div>
+                    </div>
+                    
+                    <div class="comparison-category">
+                        <span>Presales Power Up</span>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-item before">Presales overwhelmed with routine requests</div>
+                        <div class="comparison-item after">3x productivity - presales focuses on strategic deals</div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-item before">40-hour weeks on repetitive quotes</div>
+                        <div class="comparison-item after">80% workload reduction - presales scales effortlessly</div>
+                    </div>
+                    
+                    <div class="comparison-category">
+                        <span>Sales Performance Power Up</span>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-item before">Buyer friction, delayed responses</div>
+                        <div class="comparison-item after">Deliver technical guidance in every conversation</div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-item before">Deals stall in critical moments</div>
+                        <div class="comparison-item after">close faster. beat the competition.</div>
                     </div>
                     
                     <div class="comparison-row">
                         <div class="comparison-item before">38% of deals stall in presales</div>
-                        <div class="comparison-arrow">→</div>
                         <div class="comparison-item after">Increase win rate 2x</div>
                     </div>
                 </div>
@@ -1135,100 +1227,112 @@
     <section class="intelligence-section">
         <div class="container">
             <div class="intelligence-content">
-                <h2 class="intelligence-title">Post-Meeting Buyer Visibility Drives Intelligent Closing</h2>
+                <h2 class="intelligence-title">Close More Deals with Post-Meeting Buyer Engagement Analytics</h2>
                 <p class="intelligence-subtitle">
                     Portune tracks buyer's post-meeting interactions to reveal purchase readiness and commercial intent
                 </p>
                 
                 <div class="intelligence-list">
                     <div class="intelligence-item">
-                        <span class="intelligence-bullet">•</span>
+                        <img src="Portune_avatar.png" alt="" class="intelligence-bullet-icon">
                         <span>Track buyer's post-meeting interactions with configuration details</span>
                     </div>
                     <div class="intelligence-item">
-                        <span class="intelligence-bullet">•</span>
+                        <img src="Portune_avatar.png" alt="" class="intelligence-bullet-icon">
                         <span>Monitor when they share solution docs with internal stakeholders</span>
                     </div>
                     <div class="intelligence-item">
-                        <span class="intelligence-bullet">•</span>
+                        <img src="Portune_avatar.png" alt="" class="intelligence-bullet-icon">
                         <span>Get instant alerts revealing technical concerns and pricing engagement</span>
                     </div>
                     <div class="intelligence-item">
-                        <span class="intelligence-bullet">•</span>
+                        <img src="Portune_avatar.png" alt="" class="intelligence-bullet-icon">
                         <span>Know buyer readiness, blockers, and commercial intent—no guesswork, no blind spots</span>
                     </div>
                 </div>
 
                 <p class="intelligence-cta-text">
-                    Align sellers with buyer's technical concerns and purchase readiness
+                    <span class="gradient">Align sellers with buyer's technical concerns and purchase readiness</span>
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Industry Targeting Badge -->
-    <div style="text-align: center; padding: 40px 0; background: var(--bg-secondary);">
-        <p style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); font-weight: 600;">
-            Built for IT • Networking • Telecom • IoT Sales Teams
-        </p>
-    </div>
-
-    <div class="section-divider"></div>
-
-    <!-- Use Case Example -->
-    <section class="use-case-section" id="use-case">
-        <div class="container">
-            <h2 class="section-title">Real-World Example</h2>
-            
-            <div class="use-case-card">
-                <h3 class="use-case-title">Enterprise Network Infrastructure Quote</h3>
-                
-                <div class="process-comparison">
-                    <div class="process-block">
-                        <div class="process-label old">Traditional Process</div>
-                        <p class="process-text">
-                            Seller submits RFP → Stalls for presales (2-3 days) → Engineering reviews requirements → Technical validation → Quote generated → Back to seller → Deal lost to faster competitor
-                        </p>
-                    </div>
-
-                    <div class="process-arrow">↓</div>
-
-                    <div class="process-block">
-                        <div class="process-label new">With Portune</div>
-                        <p class="process-text">
-                            Seller inputs requirements → AI validates technical constraints → Solution configured with pricing → Delivered in minutes while on the call → Seller advances deal with confidence
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="section-divider"></div>
-
     <!-- Benefits -->
     <section class="benefits-section" id="results">
         <div class="container">
-            <h2 class="section-title">The Results</h2>
+            <h2 class="section-title">The Portune Advantage</h2>
             
             <div class="benefits-grid">
                 <div class="benefit-item">
-                    <div class="benefit-check">✓</div>
+                    <div class="benefit-check">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="benefit-icon-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="32" cy="14" r="10" stroke="url(#benefit-icon-1)" stroke-width="3" fill="none"/>
+                            <path d="M32 8V14L36 17" stroke="url(#benefit-icon-1)" stroke-width="2.5" stroke-linecap="round"/>
+                            <rect x="6" y="28" width="38" height="7" rx="2" fill="url(#benefit-icon-1)"/>
+                            <rect x="10" y="38" width="30" height="7" rx="2" fill="url(#benefit-icon-1)" opacity="0.7"/>
+                        </svg>
+                    </div>
                     <div class="benefit-text">3-5x faster deal velocity (days, not weeks)</div>
                 </div>
                 
                 <div class="benefit-item">
-                    <div class="benefit-check">✓</div>
+                    <div class="benefit-check">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="benefit-icon-2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="25" cy="14" r="8" fill="url(#benefit-icon-2)"/>
+                            <path d="M14 42V32C14 26 18 23 25 23C32 23 36 26 36 32V42" stroke="url(#benefit-icon-2)" stroke-width="3" fill="none"/>
+                            <path d="M20 32L24 36L32 28" stroke="url(#benefit-icon-2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                     <div class="benefit-text">Know what concerns the buyer and when it's ready to close</div>
                 </div>
                 
                 <div class="benefit-item">
-                    <div class="benefit-check">✓</div>
+                    <div class="benefit-check">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="benefit-icon-3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="15" cy="12" r="6" fill="url(#benefit-icon-3)"/>
+                            <path d="M8 38V28C8 24 11 22 15 22C19 22 22 24 22 28V38" stroke="url(#benefit-icon-3)" stroke-width="3" fill="none"/>
+                            <rect x="28" y="30" width="6" height="12" rx="1" fill="url(#benefit-icon-3)"/>
+                            <rect x="36" y="24" width="6" height="18" rx="1" fill="url(#benefit-icon-3)"/>
+                            <path d="M30 20L38 12M38 12L38 18M38 12L32 12" stroke="url(#benefit-icon-3)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                     <div class="benefit-text">Why risk stalling for presales?! Advance the deal with valuable technical guidance</div>
                 </div>
                 
                 <div class="benefit-item">
-                    <div class="benefit-check">✓</div>
+                    <div class="benefit-check">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="benefit-icon-4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect x="8" y="32" width="8" height="14" rx="1" fill="url(#benefit-icon-4)" opacity="0.6"/>
+                            <rect x="18" y="26" width="8" height="20" rx="1" fill="url(#benefit-icon-4)" opacity="0.8"/>
+                            <rect x="28" y="18" width="8" height="28" rx="1" fill="url(#benefit-icon-4)"/>
+                            <path d="M24 10L38 6M38 6L38 12M38 6L32 6" stroke="url(#benefit-icon-4)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                     <div class="benefit-text">2x win rate increase with 80% presales workload reduction</div>
                 </div>
             </div>
@@ -1241,7 +1345,7 @@
             <div class="trust-content">
                 <div class="trust-badge">
                     <div class="trust-badge-icon">✓</div>
-                    <div class="trust-badge-text">Built by Former Presales Leaders</div>
+                    <div class="trust-badge-text">Built by sales leaders for sales leaders</div>
                 </div>
                 <p class="trust-text">
                     20+ years in global tech enterprise sales and presales. We've lived this problem—watching deals stall, competitors move faster, and revenue slip through the presales bottleneck. Portune is the solution we wish we'd had.
@@ -1250,10 +1354,32 @@
         </div>
     </section>
 
+    <!-- CTA -->
+    <section class="cta-section" id="demo">
+        <div class="container">
+            <h2 class="cta-title">See Portune in Action</h2>
+            <p class="cta-subtitle">
+                15-minute demo. See how your team achieves seller independence and 3-5x deal velocity.
+            </p>
+            
+            <!-- REPLACE WITH YOUR CALENDLY LINK -->
+            <a href="https://calendly.com/portune-info/30min" class="cta-button">Book a Demo</a>
+
+            <div class="cta-secondary">
+                <p class="cta-secondary-text">
+                    Want to shape the future of presales automation?
+                </p>
+                <a href="mailto:guy@portune.ai?subject=Design%20Partner%20Interest" class="cta-secondary-link">
+                    Learn about our design partner program →
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Form -->
     <section class="contact-section" id="contact">
         <div class="container">
-            <h2 class="section-title">Get in Touch</h2>
+            <h2 class="section-title">Contact Us</h2>
             <form class="contact-form" action="#" method="POST">
                 <div class="form-group">
                     <label class="form-label" for="name">Name *</label>
@@ -1276,35 +1402,12 @@
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta-section" id="demo">
-        <div class="container">
-            <h2 class="cta-title">See Portune in Action</h2>
-            <p class="cta-subtitle">
-                15-minute demo. See how your team achieves seller independence and 3-5x deal velocity.
-            </p>
-            
-            <!-- REPLACE WITH YOUR CALENDLY LINK -->
-            <a href="https://calendly.com/your-link-here" class="cta-button">Book a Demo</a>
-            <p class="cta-subtext">No commitment required • See results immediately</p>
-
-            <div class="cta-secondary">
-                <p class="cta-secondary-text">
-                    Want to shape the future of presales automation?
-                </p>
-                <a href="mailto:guy@portune.ai?subject=Design%20Partner%20Interest" class="cta-secondary-link">
-                    Learn about our design partner program →
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- Legal -->
     <section class="legal-section">
         <div class="container">
             <p class="legal-text">
                 © 2025 Portune. All rights reserved. | 
-                <a href="mailto:guy@portune.ai">guy@portune.ai</a> | 
+                <a href="mailto:info@portune.io">info@portune.io</a> | 
                 <a href="#">Privacy Policy</a> | 
                 <a href="#">Terms of Service</a>
             </p>
