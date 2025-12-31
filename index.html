@@ -746,6 +746,238 @@
             line-height: 1.6;
         }
 
+        /* Team Section */
+        .team-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f0f0ff 0%, #f5f0ff 100%);
+            position: relative;
+        }
+
+        .team-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 48px;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .team-member {
+            background: white;
+            padding: 40px 32px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.15);
+        }
+
+        .team-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 24px;
+            border: 3px solid var(--accent);
+        }
+
+        .team-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .team-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .team-bio {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .team-linkedin {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: opacity 0.2s;
+        }
+
+        .team-linkedin:hover {
+            opacity: 0.7;
+        }
+
+        .team-linkedin svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Design Partner FAQ */
+        .design-partner-section {
+            margin-top: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .design-partner-card {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        .design-partner-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .design-partner-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .design-partner-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .faq-master {
+            margin-bottom: 24px;
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            background: white;
+            overflow: hidden;
+        }
+
+        .faq-master-summary {
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--accent);
+            cursor: pointer;
+            list-style: none;
+            padding: 20px 24px;
+            user-select: none;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, #f0f0ff 0%, #f5f0ff 100%);
+        }
+
+        .faq-master-summary:hover {
+            background: linear-gradient(135deg, #e8e8ff 0%, #f0e8ff 100%);
+        }
+
+        .faq-master-summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-toggle-text {
+            font-weight: 600;
+        }
+
+        .faq-arrow {
+            font-size: 14px;
+            transition: transform 0.3s;
+            color: var(--accent);
+        }
+
+        .faq-master[open] .faq-arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-master[open] .faq-master-summary {
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .faq-master-content {
+            padding: 32px 24px;
+        }
+
+        .faq-question {
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-question:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .faq-question h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .faq-question p {
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .faq-question p:last-child {
+            margin-bottom: 0;
+        }
+
+        .design-partner-cta {
+            text-align: center;
+            margin-top: 32px;
+        }
+
+        .design-partner-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+        }
+
+        .design-partner-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(99, 102, 241, 0.4);
+        }
+
         /* Contact Form */
         .contact-section {
             padding: 80px 0;
@@ -1099,13 +1331,17 @@
         <div class="container">
             <div class="hero-kicker">Why limit your sales team only to the products they know?</div>
             <h1 class="hero-headline">
-                Turn Every Seller<br>
-                Into a <span class="gradient">Technical Expert</span>
+                Power Up Your Sellers<br>
+                with <span class="gradient">Instant Technical Expertise</span>
             </h1>
             <p class="hero-subheadline">
-                <span class="hero-subheadline-line">Achieve seller independence. Close without stalling for presales.</span>
-                <span class="hero-subheadline-line">Unlock 3-5x faster deal velocity.</span>
-                <span class="hero-subheadline-line">Close more deals with real-time buyer intelligence.</span>
+                <span class="hero-subheadline-line">Achieve seller independence without stalling for presales.</span>
+                <span class="hero-subheadline-line">Unlock 3x faster deal velocity.</span>
+                <span class="hero-subheadline-line">Unlock 2x presales productivity.</span>
+                <span class="hero-subheadline-line">Know when and how to close with buyer intelligence.</span>
+            </p>
+            <p style="font-size: 18px; color: #6366f1; font-weight: 600; margin-top: 20px;">
+                Built for configurable products in IT, networking, and IoT
             </p>
         </div>
     </section>
@@ -1119,7 +1355,7 @@
                 <div class="step-item">
                     <div class="step-number">1</div>
                     <div class="step-title">Requirements Discovery</div>
-                    <div class="step-desc">Seller captures client needs through AI-guided conversation<br>&nbsp;</div>
+                    <div class="step-desc">Seller captures client needs through AI-guided conversation.<br>Handling multi-component compatibility, technical dependencies, budget and lead time</div>
                     <div class="step-fragment">
                         <img src="1chat_blur.png" alt="AI Requirements Assistant">
                     </div>
@@ -1128,7 +1364,7 @@
                 <div class="step-item">
                     <div class="step-number">2</div>
                     <div class="step-title">Technical Specification</div>
-                    <div class="step-desc">AI validates requirements and generates compliant technical specs</div>
+                    <div class="step-desc">System validates requirements and generates compliant technical specs</div>
                     <div class="step-fragment">
                         <img src="2respec_rec.png" alt="Technical Specifications">
                     </div>
@@ -1137,7 +1373,7 @@
                 <div class="step-item">
                     <div class="step-number">3</div>
                     <div class="step-title">Solution Configuration</div>
-                    <div class="step-desc">System builds coherent multi-product configurations with accurate pricing</div>
+                    <div class="step-desc">System builds validated multi-product configurations</div>
                     <div class="step-fragment">
                         <img src="3Config_rec.png" alt="Bill of Materials">
                     </div>
@@ -1146,7 +1382,7 @@
                 <div class="step-item">
                     <div class="step-number">4</div>
                     <div class="step-title">Post-Meeting Buyer Visibility</div>
-                    <div class="step-desc">Track buyer's interactions with configuration to reveal purchase readiness</div>
+                    <div class="step-desc">Track buyer's interactions with system configurations to reveal blockers and purchase readiness</div>
                     <div class="step-fragment">
                         <img src="4Engage_rec.png" alt="Engagement Metrics">
                     </div>
@@ -1173,17 +1409,17 @@
                     
                     <div class="comparison-row">
                         <div class="comparison-item before">"Let me check with engineering..."</div>
-                        <div class="comparison-item after">"Let me answer your questions, and recommend a solution."</div>
+                        <div class="comparison-item after">"Let me answer your questions, and recommend a solution configuration."</div>
                     </div>
                     
                     <div class="comparison-row">
-                        <div class="comparison-item before">Low buyer confidence, weak purchase intent</div>
+                        <div class="comparison-item before">Low buyer confidence, Ambiguous purchase intent</div>
                         <div class="comparison-item after">High buyer confidence, strong purchase intent</div>
                     </div>
 
                     <div class="comparison-row">
                         <div class="comparison-item before">No visibility into buyer readiness or blockers</div>
-                        <div class="comparison-item after">Know purchase readiness and commercial intent in real-time</div>
+                        <div class="comparison-item after">Know buyer's technical, commercial blockers and readiness real-time</div>
                     </div>
                     
                     <div class="comparison-category">
@@ -1192,12 +1428,12 @@
                     
                     <div class="comparison-row">
                         <div class="comparison-item before">Presales overwhelmed with routine requests</div>
-                        <div class="comparison-item after">3x productivity - presales focuses on strategic deals</div>
+                        <div class="comparison-item after">2x presales productivity - release bottlenecks, focus on strategic deals</div>
                     </div>
                     
                     <div class="comparison-row">
                         <div class="comparison-item before">40-hour weeks on repetitive quotes</div>
-                        <div class="comparison-item after">80% workload reduction - presales scales effortlessly</div>
+                        <div class="comparison-item after">32% workload reduction - presales scales effortlessly</div>
                     </div>
                     
                     <div class="comparison-category">
@@ -1229,7 +1465,7 @@
             <div class="intelligence-content">
                 <h2 class="intelligence-title">Close More Deals with Post-Meeting Buyer Engagement Analytics</h2>
                 <p class="intelligence-subtitle">
-                    Portune tracks buyer's post-meeting interactions to reveal purchase readiness and commercial intent
+                    Portune tracks buyer's post-meeting interactions and alerts seller about the buyers technical, commercial concerns and purchase readiness
                 </p>
                 
                 <div class="intelligence-list">
@@ -1252,7 +1488,7 @@
                 </div>
 
                 <p class="intelligence-cta-text">
-                    <span class="gradient">Align sellers with buyer's technical concerns and purchase readiness</span>
+                    <span class="gradient">Why fly blind? Align your sellers with the buyers concerns and intent in real-time.</span>
                 </p>
             </div>
         </div>
@@ -1279,7 +1515,7 @@
                             <rect x="10" y="38" width="30" height="7" rx="2" fill="url(#benefit-icon-1)" opacity="0.7"/>
                         </svg>
                     </div>
-                    <div class="benefit-text">3-5x faster deal velocity (days, not weeks)</div>
+                    <div class="benefit-text">3x faster deal velocity (days, not weeks)</div>
                 </div>
                 
                 <div class="benefit-item">
@@ -1296,7 +1532,7 @@
                             <path d="M20 32L24 36L32 28" stroke="url(#benefit-icon-2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <div class="benefit-text">Know what concerns the buyer and when it's ready to close</div>
+                    <div class="benefit-text">Know what concerns the buyer and when to close</div>
                 </div>
                 
                 <div class="benefit-item">
@@ -1333,7 +1569,7 @@
                             <path d="M24 10L38 6M38 6L38 12M38 6L32 6" stroke="url(#benefit-icon-4)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <div class="benefit-text">2x win rate increase with 80% presales workload reduction</div>
+                    <div class="benefit-text">2x win rate increase with 32% presales workload reduction</div>
                 </div>
             </div>
         </div>
@@ -1354,6 +1590,47 @@
         </div>
     </section>
 
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title">Meet the Founders</h2>
+            
+            <div class="team-grid">
+                <!-- Guy Azar -->
+                <div class="team-member">
+                    <img src="guy-azar.jpg" alt="Guy Azar" class="team-photo">
+                    <h3 class="team-name">Guy Azar</h3>
+                    <p class="team-title">CEO & Co-Founder</p>
+                    <p class="team-bio">
+                        20+ years in B2B tech leadership, presales, and scale operations. 2x founder, 3x CXO. Built Portune after watching deals stall and revenue slip through the presales bottleneck.
+                    </p>
+                    <a href="https://www.linkedin.com/in/guyazar" target="_blank" class="team-linkedin">
+                        <svg viewBox="0 0 24 24" fill="#0077b5">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                        Connect on LinkedIn
+                    </a>
+                </div>
+
+                <!-- Zeev Soskin -->
+                <div class="team-member">
+                    <img src="zeev-soskin.jpg" alt="Zeev Soskin" class="team-photo">
+                    <h3 class="team-name">Zeev Soskin</h3>
+                    <p class="team-title">CTO & Co-Founder</p>
+                    <p class="team-bio">
+                        12+ years in full-stack engineering, AI integration, and UX-driven product design. 2x founder, 2x CTO. Architecting the AI that turns complex technical sales into seamless buyer experiences.
+                    </p>
+                    <a href="https://www.linkedin.com/in/zeevsoskin" target="_blank" class="team-linkedin">
+                        <svg viewBox="0 0 24 24" fill="#0077b5">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                        Connect on LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA -->
     <section class="cta-section" id="demo">
         <div class="container">
@@ -1365,13 +1642,74 @@
             <!-- REPLACE WITH YOUR CALENDLY LINK -->
             <a href="https://calendly.com/portune-info/30min" class="cta-button">Book a Demo</a>
 
-            <div class="cta-secondary">
-                <p class="cta-secondary-text">
-                    Want to shape the future of presales automation?
-                </p>
-                <a href="mailto:guy@portune.ai?subject=Design%20Partner%20Interest" class="cta-secondary-link">
-                    Learn about our design partner program →
-                </a>
+            <div class="design-partner-section">
+                <div class="design-partner-card">
+                    <div class="design-partner-header">
+                        <h3 class="design-partner-title">🚀 Design Partner Program</h3>
+                        <p class="design-partner-subtitle">
+                            Shape the future of presales automation. Join as one of our first 3 partners.
+                        </p>
+                    </div>
+
+                    <!-- Single Collapsible FAQ -->
+                    <details class="faq-master">
+                        <summary class="faq-master-summary">
+                            <span class="faq-toggle-text">View Program Details</span>
+                            <span class="faq-arrow">▼</span>
+                        </summary>
+                        <div class="faq-master-content">
+                            
+                            <!-- Question 1 -->
+                            <div class="faq-question">
+                                <h4>What do design partners get?</h4>
+                                <p>✅ <strong>Free access to Portune</strong> for 6 months (full platform, no feature limits)</p>
+                                <p>✅ <strong>Dedicated implementation support</strong> — we handle product catalog setup</p>
+                                <p>✅ <strong>Priority feature development</strong> for your specific use cases</p>
+                                <p>✅ <strong>Early adopter pricing lock-in</strong> after program ends</p>
+                                <p>✅ <strong>Co-marketing opportunity</strong> (optional, anonymized case study)</p>
+                            </div>
+
+                            <!-- Question 2 -->
+                            <div class="faq-question">
+                                <h4>What's the time commitment?</h4>
+                                <p><strong>Total: ~4-6 hours/month</strong></p>
+                                <p>• <strong>Setup phase (Week 1-2):</strong> 2-3 hours working with our team on product catalog integration</p>
+                                <p>• <strong>Pilot phase (Months 1-6):</strong> 2-3 reps use Portune in live sales cycles</p>
+                                <p>• <strong>Feedback sessions:</strong> Bi-weekly 30-minute calls to share insights and requests</p>
+                                <p>We make it easy — you focus on selling, we handle the technical heavy lifting.</p>
+                            </div>
+
+                            <!-- Question 3 -->
+                            <div class="faq-question">
+                                <h4>Who's the ideal design partner?</h4>
+                                <p>You're a great fit if you:</p>
+                                <p>✔ Sell <strong>complex, configurable products</strong> (build-to-suit hardware, multi-component solutions, IT infrastructure)</p>
+                                <p>✔ Have a <strong>presales bottleneck</strong> — deals stall waiting for technical resources</p>
+                                <p>✔ Handle <strong>high-volume deals</strong> (multiple quotes/week, many under $50K)</p>
+                                <p>✔ Want to <strong>empower your sales team</strong> to handle technical conversations independently</p>
+                            </div>
+
+                            <!-- Question 4 -->
+                            <div class="faq-question">
+                                <h4>What happens after 6 months?</h4>
+                                <p>You decide if Portune is delivering value:</p>
+                                <p>✅ <strong>Love it?</strong> Continue with locked-in early adopter pricing (significantly below standard rates)</p>
+                                <p>✅ <strong>Not the right fit?</strong> Walk away, no strings attached — you keep all configured data</p>
+                                <p>Our goal: prove ROI in the first 60 days so continuing is an obvious choice.</p>
+                            </div>
+
+                        </div>
+                    </details>
+
+                    <div class="design-partner-cta">
+                        <p style="font-size: 18px; color: var(--text-primary); font-weight: 600; margin-bottom: 16px;">
+                            Interested? Leave your details in the contact form below and we'll reach out.
+                        </p>
+                        <a href="#contact" class="design-partner-button">
+                            Go to Contact Form ↓
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
