@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portune | Turn Sellers Into Technical Experts</title>
-    <meta name="description" content="AI-powered presales automation for IT, Networking, Telecom & IoT sales teams. Achieve seller independence with 3-5x faster deal velocity.">
+    <meta name="description" content="AI-powered presales automation for IT, Networking, Telecom & IoT sales teams. Achieve seller independence — close complex deals faster.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -79,7 +79,7 @@
             color: white;
             font-size: 14px;
             font-weight: 600;
-            border-radius: 8px;
+            border-radius: 10px;
             text-decoration: none;
             transition: all 0.3s ease;
             margin-left: auto;
@@ -169,8 +169,9 @@
             background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             text-align: center;
+            -webkit-text-fill-color: white;
         }
 
         /* Hero */
@@ -207,48 +208,18 @@
             background-clip: text;
         }
 
-        .hero-subheadline {
-            font-size: clamp(18px, 2.5vw, 24px);
-            font-weight: 500;
-            color: var(--text-secondary);
-            max-width: 750px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-        
-        .hero-subheadline-line {
-            display: block;
-            margin-bottom: 8px;
-        }
-        
-        .hero-subheadline-line:last-child {
-            margin-bottom: 0;
-        }
-
-        .hero-bullet {
-            width: 24px;
-            height: 24px;
-            display: inline-block;
-            vertical-align: middle;
-            margin-right: 12px;
+        .hero-source-note {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            font-style: italic;
         }
 
         /* How It Works */
         .how-it-works-section {
             padding: 80px 0;
-            background: linear-gradient(135deg, #f0f0ff 0%, #f5f0ff 100%);
-            position: relative;
-        }
-
-        .how-it-works-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 80% 50%, rgba(139, 123, 224, 0.08) 0%, transparent 50%);
-            pointer-events: none;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
         }
 
         .section-title {
@@ -274,7 +245,7 @@
         }
 
         .step-item:nth-child(4) {
-            grid-column: 2 / 3;
+            grid-column: auto;
         }
 
         .step-item {
@@ -313,7 +284,7 @@
 
         .step-fragment {
             margin-top: 24px;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
             border: 1px solid var(--border);
@@ -330,35 +301,7 @@
             display: block;
             object-fit: cover;
             object-position: center;
-            border-radius: 8px;
-        }
-
-        .result-banner {
-            margin-top: 60px;
-            padding: 32px;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
-            border-radius: 16px;
-            text-align: center;
-            border: none;
-            box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
-            position: relative;
-            z-index: 1;
-        }
-
-        .result-banner-text {
-            font-size: 20px;
-            font-weight: 600;
-            color: white;
-            line-height: 1.5;
-        }
-
-        .result-banner-highlight {
-            color: white;
-            font-weight: 700;
-            text-decoration: underline;
-            text-decoration-color: rgba(255, 255, 255, 0.5);
-            text-decoration-thickness: 2px;
-            text-underline-offset: 4px;
+            border-radius: 12px;
         }
 
         /* Comparison Grid */
@@ -399,25 +342,20 @@
             align-items: center;
             justify-content: center;
             gap: 12px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            padding: 20px 24px;
-            background: linear-gradient(135deg, #e8e8ff 0%, #f0e8ff 100%);
-            color: #5b4b8a;
-            border-top: 2px solid rgba(99, 102, 241, 0.15);
+            letter-spacing: 0.12em;
+            padding: 14px 24px;
+            background: rgba(99,102,241,0.07);
+            color: var(--accent);
+            border-top: 1px solid rgba(99,102,241,0.14);
+            border-bottom: 1px solid rgba(99,102,241,0.14);
             margin-top: 0;
         }
 
         .comparison-category:first-child {
             border-top: none;
-        }
-
-        .comparison-category-icon {
-            width: 24px;
-            height: 24px;
-            flex-shrink: 0;
         }
 
         .comparison-item.after {
@@ -468,13 +406,12 @@
         }
 
         .comparison-item {
-            font-size: 18px;
+            font-size: 15px;
             font-weight: 500;
             line-height: 1.6;
             padding: 28px 32px;
             position: relative;
             z-index: 1;
-            min-height: 120px;
         }
 
         .comparison-item.before {
@@ -500,278 +437,148 @@
             display: flex;
             align-items: center;
             justify-content: flex-start;
-        }
-
-        /* Intelligence Callout */
-        .intelligence-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #f0f0ff 0%, #f5f0ff 100%);
-            position: relative;
-        }
-
-        .intelligence-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .intelligence-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .intelligence-title {
-            font-size: clamp(32px, 4vw, 48px);
-            font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -0.03em;
-            margin-bottom: 24px;
-            color: var(--text-primary);
-        }
-
-        .intelligence-subtitle {
-            font-size: 20px;
-            font-weight: 500;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-            line-height: 1.5;
-        }
-
-        .intelligence-list {
-            display: grid;
-            gap: 16px;
-            text-align: left;
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 32px;
-        }
-
-        .intelligence-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            font-size: 17px;
-            color: var(--text-primary);
-            line-height: 1.5;
-        }
-
-        .intelligence-bullet-icon {
-            width: 24px;
-            height: 24px;
-            flex-shrink: 0;
-        }
-
-        .intelligence-cta-text {
-            margin-top: 32px;
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        /* Use Case Example */
-        .use-case-section {
-            padding: 80px 0;
-            background: var(--bg-secondary);
-        }
-
-        .use-case-card {
-            max-width: 800px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, #fafaff 0%, #faf5ff 100%);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 48px;
-        }
-
-        .use-case-title {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 32px;
-            text-align: center;
-        }
-
-        .process-comparison {
-            display: grid;
-            gap: 24px;
-        }
-
-        .process-block {
-            padding: 24px;
-            background: white;
-            border-radius: 12px;
-            border: 2px solid var(--border);
-        }
-
-        .process-label {
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 12px;
-        }
-
-        .process-label.old {
-            color: var(--text-secondary);
-        }
-
-        .process-label.new {
-            color: var(--accent);
-        }
-
-        .process-text {
-            font-size: 16px;
-            line-height: 1.6;
-            color: var(--text-primary);
-        }
-
-        .process-arrow {
-            text-align: center;
-            color: var(--accent);
-            font-size: 32px;
-            font-weight: 300;
-        }
-
-        /* Benefits Grid */
-        .benefits-section {
-            padding: 80px 0;
-            background: var(--bg-primary);
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .benefit-item {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 32px;
-            display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 16px;
+            gap: 4px;
+        }
+
+        .comparison-source {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 400;
+            font-style: italic;
+            align-self: flex-start;
+        }
+
+        .gradient {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .metrics-disclaimer {
             text-align: center;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: 32px;
+            font-size: 13px;
+            color: var(--text-muted);
+            font-style: italic;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .benefit-item:hover {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 123, 224, 0.05) 100%);
-            border-color: var(--accent);
-            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.15);
-            transform: translateY(-2px);
-        }
-
-        .benefit-check {
-            width: 50px;
-            height: 50px;
-            flex-shrink: 0;
-        }
-
-        .benefit-check svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .benefit-text {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--text-primary);
-            line-height: 1.4;
-        }
-
-        /* Trust Section */
-        .trust-section {
-            padding: 60px 0;
+        /* ICP Checklist */
+        .icp-section {
+            padding: 80px 0;
             background: var(--bg-secondary);
             border-top: 1px solid var(--border);
         }
 
-        .trust-content {
-            max-width: 800px;
+        .icp-card {
+            max-width: 720px;
             margin: 0 auto;
+            background: linear-gradient(135deg, #fafaff 0%, #faf5ff 100%);
+            border: 2px solid var(--border);
+            border-radius: 20px;
+            padding: 48px;
             text-align: center;
         }
 
-        .trust-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 16px;
-            padding: 20px 32px;
-            background: white;
-            border: 2px solid;
-            border-image: linear-gradient(135deg, var(--accent), var(--purple)) 1;
-            border-radius: 12px;
-            margin-bottom: 32px;
-            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.08);
+        .icp-kicker {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 12px;
         }
 
-        .trust-badge-icon {
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, var(--accent), var(--purple));
+        .icp-title {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .icp-subtitle {
+            font-size: 17px;
+            color: var(--text-secondary);
+            margin-bottom: 36px;
+        }
+
+        .icp-checklist {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            text-align: left;
+            margin-bottom: 32px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .icp-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 24px;
+            border-bottom: 1px solid var(--border);
+            font-size: 15px;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        .icp-item:last-child {
+            border-bottom: none;
+        }
+
+        .icp-check {
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 18px;
             flex-shrink: 0;
-        }
-
-        .trust-badge-text {
-            font-size: 17px;
+            color: white;
+            font-size: 14px;
             font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: 0.02em;
         }
 
-        .trust-text {
-            font-size: 18px;
+        .icp-item-text strong {
+            font-weight: 700;
+        }
+
+        .icp-item-text span {
+            display: block;
+            font-size: 13px;
             color: var(--text-secondary);
-            line-height: 1.6;
+            margin-top: 2px;
+        }
+
+        .icp-cta-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
         }
 
         /* Team Section */
         .team-section {
             padding: 80px 0;
-            background: linear-gradient(135deg, #f0f0ff 0%, #f5f0ff 100%);
-            position: relative;
-        }
-
-        .team-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 50%);
-            pointer-events: none;
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border);
         }
 
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 48px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
             max-width: 900px;
             margin: 0 auto;
-            position: relative;
-            z-index: 1;
         }
 
         .team-member {
@@ -789,259 +596,83 @@
             box-shadow: 0 8px 24px rgba(99, 102, 241, 0.15);
         }
 
-        .team-photo {
-            width: 120px;
-            height: 120px;
+        .team-avatar {
+            width: 96px;
+            height: 96px;
             border-radius: 50%;
-            object-fit: cover;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 800;
+            color: white;
             margin: 0 auto 24px;
-            border: 3px solid var(--accent);
+            letter-spacing: -1px;
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
         }
 
         .team-name {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .team-title {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 600;
             color: var(--accent);
             margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
         }
 
         .team-bio {
-            font-size: 16px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 24px;
-        }
-
-        .team-linkedin {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
             font-size: 15px;
-            transition: opacity 0.2s;
-        }
-
-        .team-linkedin:hover {
-            opacity: 0.7;
-        }
-
-        .team-linkedin svg {
-            width: 20px;
-            height: 20px;
-        }
-
-        /* Design Partner FAQ */
-        .design-partner-section {
-            margin-top: 60px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .design-partner-card {
-            background: rgba(255, 255, 255, 0.98);
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-        }
-
-        .design-partner-header {
-            text-align: center;
-            margin-bottom: 32px;
-        }
-
-        .design-partner-title {
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 16px;
-        }
-
-        .design-partner-subtitle {
-            font-size: 18px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .faq-master {
-            margin-bottom: 24px;
-            border: 2px solid var(--accent);
-            border-radius: 12px;
-            background: white;
-            overflow: hidden;
-        }
-
-        .faq-master-summary {
-            font-weight: 600;
-            font-size: 18px;
-            color: var(--accent);
-            cursor: pointer;
-            list-style: none;
-            padding: 20px 24px;
-            user-select: none;
-            transition: all 0.3s;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: linear-gradient(135deg, #f0f0ff 0%, #f5f0ff 100%);
-        }
-
-        .faq-master-summary:hover {
-            background: linear-gradient(135deg, #e8e8ff 0%, #f0e8ff 100%);
-        }
-
-        .faq-master-summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .faq-toggle-text {
-            font-weight: 600;
-        }
-
-        .faq-arrow {
-            font-size: 14px;
-            transition: transform 0.3s;
-            color: var(--accent);
-        }
-
-        .faq-master[open] .faq-arrow {
-            transform: rotate(180deg);
-        }
-
-        .faq-master[open] .faq-master-summary {
-            border-bottom: 2px solid var(--accent);
-        }
-
-        .faq-master-content {
-            padding: 32px 24px;
-        }
-
-        .faq-question {
-            margin-bottom: 32px;
-            padding-bottom: 32px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .faq-question:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-
-        .faq-question h4 {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 16px;
-        }
-
-        .faq-question p {
-            margin-bottom: 12px;
             color: var(--text-secondary);
             line-height: 1.7;
-            font-size: 16px;
         }
 
-        .faq-question p:last-child {
-            margin-bottom: 0;
+        .team-credentials {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+            flex-wrap: wrap;
         }
 
-        .design-partner-cta {
+        .team-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .team-stealth-note {
             text-align: center;
             margin-top: 32px;
+            font-size: 13px;
+            color: var(--text-muted);
+            font-style: italic;
+            position: relative;
+            z-index: 1;
         }
 
-        .design-partner-button {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
-            color: white;
-            padding: 18px 40px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 18px;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
-        }
-
-        .design-partner-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 24px rgba(99, 102, 241, 0.4);
-        }
-
-        /* Contact Form */
-        .contact-section {
+        /* Design Partner Program */
+        .partner-section {
             padding: 80px 0;
-            background: var(--bg-primary);
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
         }
 
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 48px;
-        }
-
-        .form-group {
-            margin-bottom: 24px;
-        }
-
-        .form-label {
-            display: block;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 8px;
-        }
-
-        .form-input,
-        .form-textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-size: 16px;
-            font-family: inherit;
-            transition: border-color 0.2s;
-        }
-
-        .form-input:focus,
-        .form-textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-
-        .form-textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .form-button {
-            width: 100%;
-            padding: 16px;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
-            color: white;
-            font-size: 16px;
-            font-weight: 600;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .form-button:hover {
-            transform: translateY(-2px);
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(0.85); }
         }
 
         /* CTA Section */
@@ -1076,7 +707,7 @@
             color: var(--accent);
             font-size: 18px;
             font-weight: 700;
-            border-radius: 12px;
+            border-radius: 10px;
             text-decoration: none;
             border: none;
             cursor: pointer;
@@ -1093,67 +724,148 @@
             transform: translateY(0);
         }
 
-        .cta-button-small {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 40px;
+        /* Contact Form */
+        .contact-section {
+            padding: 80px 0;
+            background: var(--bg-primary);
+        }
+
+        .contact-intro {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 48px;
+        }
+
+        .contact-intro p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            max-width: 640px;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 48px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+            color: var(--text-primary);
+            background: #fafafa;
+            transition: border-color 0.2s, background 0.2s;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .form-select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23737373' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 36px;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: white;
+        }
+
+        .form-textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-section-label {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin: 28px 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .form-button {
+            width: 100%;
+            padding: 16px;
             background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
             color: white;
             font-size: 16px;
-            font-weight: 700;
-            border-radius: 10px;
-            text-decoration: none;
+            font-weight: 600;
             border: none;
+            border-radius: 10px;
             cursor: pointer;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 8px;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
         }
 
-        .cta-button-small:hover {
+        .form-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
         }
 
-        .cta-button-small:active {
-            transform: translateY(0);
-        }
-
-        .mini-cta-section {
+        .form-success {
+            display: none;
             text-align: center;
-            padding: 60px 0;
-            background: var(--bg-primary);
-            border-top: 2px solid;
-            border-image: linear-gradient(90deg, transparent, var(--accent), var(--purple), transparent) 1;
+            padding: 32px;
         }
 
-        .cta-subtext {
-            margin-top: 24px;
-            font-size: 15px;
-            opacity: 0.9;
-        }
-
-        .cta-secondary {
-            margin-top: 32px;
-            padding-top: 32px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .cta-secondary-text {
-            font-size: 16px;
-            opacity: 0.9;
-            margin-bottom: 16px;
-        }
-
-        .cta-secondary-link {
+        .form-success-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--success), #059669);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
             color: white;
-            text-decoration: underline;
-            font-weight: 600;
-            transition: opacity 0.2s;
         }
 
-        .cta-secondary-link:hover {
-            opacity: 0.8;
+        .form-success h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .form-success p {
+            color: var(--text-secondary);
+            font-size: 16px;
         }
 
         /* Legal */
@@ -1244,7 +956,7 @@
             }
 
             .comparison-item {
-                font-size: 16px;
+                font-size: 15px;
                 text-align: center !important;
                 padding: 24px 16px;
                 min-height: auto;
@@ -1258,41 +970,286 @@
 
             .comparison-item.after {
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                align-items: center;
             }
 
             .comparison-row:last-child .comparison-item.after {
                 border-bottom: none;
             }
 
-            .intelligence-list {
-                padding: 24px;
-            }
-
-            .use-case-card {
+            .icp-card {
                 padding: 32px 24px;
             }
 
             .contact-form {
-                padding: 32px 24px;
+                padding: 32px 20px;
             }
 
-            .benefits-grid {
+            .form-row {
                 grid-template-columns: 1fr;
-                gap: 20px;
             }
 
             .how-it-works-section,
             .comparison-section,
-            .intelligence-section,
-            .use-case-section,
-            .benefits-section,
+            .icp-section,
+            .team-section,
+            .partner-section,
             .contact-section {
                 padding: 60px 0;
+            }
+
+            .hero-cards {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
             }
 
             .cta-section {
                 padding: 80px 0;
             }
+        }
+
+        /* Hero Outcome Cards */
+        .hero-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            max-width: 960px;
+            margin: 32px auto 24px;
+        }
+
+        .hero-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 22px 16px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 2px 8px rgba(99, 102, 241, 0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .hero-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.13);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .hero-card-icon {
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+        }
+
+        .hero-card-text {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        .hero-card-source {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-style: italic;
+            font-weight: 400;
+            margin-top: -2px;
+        }
+
+        /* Mini CTA Strip */
+        .mini-cta-strip {
+            padding: 36px 0;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .mini-cta-strip-text {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .mini-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 36px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            border-radius: 10px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+            transition: all 0.2s;
+        }
+
+        .mini-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Design Partner Accordion */
+        .partner-accordion-card {
+            max-width: 720px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #fafaff 0%, #faf5ff 100%);
+            border: 2px solid var(--border);
+            border-radius: 20px;
+            padding: 48px;
+            text-align: center;
+        }
+
+        .partner-acc-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(139,92,246,0.08) 100%);
+            border: 1px solid rgba(99,102,241,0.2);
+            border-radius: 20px;
+            padding: 6px 16px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 20px;
+        }
+
+        .partner-acc-badge-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4ade80;
+            animation: pulse 2s infinite;
+        }
+
+        .partner-acc-title {
+            font-size: clamp(24px, 3.5vw, 36px);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .partner-acc-subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .accordion {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+            margin-bottom: 28px;
+            text-align: left;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .accordion-item:last-child {
+            border-bottom: none;
+        }
+
+        .accordion-trigger {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-align: left;
+            gap: 12px;
+            transition: background 0.2s;
+        }
+
+        .accordion-trigger:hover {
+            background: rgba(99,102,241,0.03);
+        }
+
+        .accordion-trigger-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .accordion-icon-wrap {
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .accordion-chevron {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            color: var(--text-muted);
+            transition: transform 0.25s ease;
+        }
+
+        .accordion-item.open .accordion-chevron {
+            transform: rotate(180deg);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.2s ease;
+        }
+
+        .accordion-item.open .accordion-body {
+            max-height: 400px;
+        }
+
+        .accordion-inner {
+            padding: 4px 24px 24px 56px;
+        }
+
+        .accordion-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .accordion-list li {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .accordion-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 13px;
+        }
+
+        .partner-acc-note {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-top: 4px;
         }
 
         html {
@@ -1301,14 +1258,15 @@
     </style>
 </head>
 <body>
+
     <!-- Header -->
-    <header class="header">
+    <header class="header" id="mainHeader">
         <div class="header-content">
-            <img src="Portune_vertical.png" 
-                 alt="Portune" 
+            <img src="Portune_vertical.png"
+                 alt="Portune"
                  class="logo"
-                 onerror="this.onerror=null; this.src='portune_vertical.png'; console.error('Logo failed to load. Check filename case sensitivity.');">
-            <a href="https://calendly.com/portune-info/30min" class="header-cta">Book a Demo</a>
+                 onerror="this.onerror=null; this.src='portune_vertical.png';">
+            <a href="https://calendly.com/portune-info/30min" target="_blank" rel="noopener" class="header-cta">Book a Demo</a>
             <div class="hamburger" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
@@ -1320,28 +1278,103 @@
     <!-- Navigation Menu -->
     <nav class="nav-menu" id="navMenu">
         <a href="#how-it-works" class="nav-link" onclick="closeMenu()">How It Works</a>
-        <a href="#benefits" class="nav-link" onclick="closeMenu()">Benefits</a>
-        <a href="#results" class="nav-link" onclick="closeMenu()">Results</a>
-        <a href="#contact" class="nav-link" onclick="closeMenu()">Contact Us</a>
-        <a href="#demo" class="nav-link cta" onclick="closeMenu()">Book a Demo</a>
+        <a href="#benefits" class="nav-link" onclick="closeMenu()">Before &amp; After</a>
+        <a href="#right-for-you" class="nav-link" onclick="closeMenu()">Is It for You?</a>
+        <a href="#team" class="nav-link" onclick="closeMenu()">Team</a>
+        <a href="#partner" class="nav-link" onclick="closeMenu()">Partner Program</a>
+        <a href="https://calendly.com/portune-info/30min" target="_blank" rel="noopener" class="nav-link cta" onclick="closeMenu()">Book a Demo</a>
     </nav>
 
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <div class="hero-kicker">Why limit your sales team only to the products they know?</div>
+            <div class="hero-kicker">Why limit your sellers only to products they know?</div>
             <h1 class="hero-headline">
                 Power Up Your Sellers<br>
-                with <span class="gradient">Instant Technical Expertise</span>
+                <span style="font-size:16px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:var(--text-secondary); display:block; margin:2px 0 6px;">with</span>
+                <span class="gradient">Instant Technical Expertise</span>
             </h1>
-            <p class="hero-subheadline">
-                <span class="hero-subheadline-line">Achieve seller independence without stalling for presales.</span>
-                <span class="hero-subheadline-line">Unlock 3x faster deal velocity.</span>
-                <span class="hero-subheadline-line">Unlock 2x presales productivity.</span>
-                <span class="hero-subheadline-line">Know when and how to close with buyer intelligence.</span>
-            </p>
-            <p style="font-size: 18px; color: #6366f1; font-weight: 600; margin-top: 20px;">
-                Built for configurable products in IT, networking, and IoT
+            <div class="hero-cards">
+                <!-- Card 1: Seller Independence -->
+                <div class="hero-card">
+                    <div class="hero-card-icon">
+                        <svg width="44" height="44" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="hc-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1"/>
+                                    <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="25" cy="14" r="8" fill="url(#hc-grad-1)"/>
+                            <path d="M14 42V32C14 26 18 23 25 23C32 23 36 26 36 32V42" stroke="url(#hc-grad-1)" stroke-width="3" fill="none"/>
+                            <circle cx="38" cy="36" r="8" fill="url(#hc-grad-1)"/>
+                            <path d="M34 36l3 3 5-5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="hero-card-text">Seller Independence — no presales delays</div>
+                    <div class="hero-card-source">Deliver technical value in every meeting</div>
+                </div>
+                <!-- Card 2: Deal Velocity -->
+                <div class="hero-card">
+                    <div class="hero-card-icon">
+                        <svg width="44" height="44" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="hc-grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1"/>
+                                    <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="25" cy="25" r="18" stroke="url(#hc-grad-2)" stroke-width="3" fill="none"/>
+                            <path d="M25 13V25L33 31" stroke="url(#hc-grad-2)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10 10L16 16" stroke="url(#hc-grad-2)" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+                            <path d="M40 10L34 16" stroke="url(#hc-grad-2)" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <div class="hero-card-text">Accelerate deal cycles by up to 50%</div>
+                    <div class="hero-card-source">McKinsey, 2022</div>
+                </div>
+                <!-- Card 3: Win Rate -->
+                <div class="hero-card">
+                    <div class="hero-card-icon">
+                        <svg width="44" height="44" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="hc-grad-3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1"/>
+                                    <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="8" y="30" width="8" height="14" rx="2" fill="url(#hc-grad-3)" opacity="0.5"/>
+                            <rect x="21" y="22" width="8" height="22" rx="2" fill="url(#hc-grad-3)" opacity="0.75"/>
+                            <rect x="34" y="12" width="8" height="32" rx="2" fill="url(#hc-grad-3)"/>
+                            <path d="M10 18L22 12L35 6" stroke="url(#hc-grad-3)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M30 6H36V12" stroke="url(#hc-grad-3)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="hero-card-text">Increase win rate by up to 47%</div>
+                    <div class="hero-card-source">McKinsey, 2015</div>
+                </div>
+                <!-- Card 4: Buyer Intelligence -->
+                <div class="hero-card">
+                    <div class="hero-card-icon">
+                        <svg width="44" height="44" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="hc-grad-4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1"/>
+                                    <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1"/>
+                                </linearGradient>
+                            </defs>
+                            <ellipse cx="25" cy="25" rx="20" ry="12" stroke="url(#hc-grad-4)" stroke-width="3" fill="none"/>
+                            <circle cx="25" cy="25" r="6" fill="url(#hc-grad-4)"/>
+                            <circle cx="25" cy="25" r="2.5" fill="white"/>
+                            <path d="M25 10V6M25 44V40M10 25H6M44 25H40" stroke="url(#hc-grad-4)" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+                        </svg>
+                    </div>
+                    <div class="hero-card-text">Know when and how to close</div>
+                    <div class="hero-card-source">Real-time buyer intelligence</div>
+                </div>
+            </div>
+            <p style="font-size: 18px; color: #6366f1; font-weight: 600; margin-top: 24px;">
+                Powering Up Product Sales in IT, Networking, and IoT
             </p>
         </div>
     </section>
@@ -1350,409 +1383,500 @@
     <section class="how-it-works-section" id="how-it-works">
         <div class="container">
             <h2 class="section-title">How Portune Works</h2>
-            
+
             <div class="steps-grid">
                 <div class="step-item">
                     <div class="step-number">1</div>
-                    <div class="step-title">Requirements Discovery</div>
-                    <div class="step-desc">Seller captures client technical and commercial requirements through AI-guided conversation</div>
+                    <div class="step-title">Guided Requirements Discovery</div>
+                    <div class="step-desc">AI guides seller and buyer through technical and commercial needs — structured, thorough, and fast. No engineering degree required.</div>
                     <div class="step-fragment">
-                        <img src="1chat_blur.png" alt="AI Requirements Assistant">
+                        <img src="shaded3.png" alt="AI-guided requirements discovery">
                     </div>
                 </div>
-                
+
                 <div class="step-item">
                     <div class="step-number">2</div>
-                    <div class="step-title">Technical Specification</div>
-                    <div class="step-desc">System validates requirements and generates compliant technical specifications</div>
+                    <div class="step-title">Instant Solution Configuration</div>
+                    <div class="step-desc">Generate coherent multi-product configurations with instant pricing, lead times, and what-if alternatives — delivered in the meeting, not days later.</div>
                     <div class="step-fragment">
-                        <img src="2respec_rec.png" alt="Technical Specifications">
+                        <img src="shaded2.png" alt="Multi-product configuration with pricing">
                     </div>
                 </div>
-                
+
                 <div class="step-item">
                     <div class="step-number">3</div>
-                    <div class="step-title">Solution Configuration</div>
-                    <div class="step-desc">System builds validated multi-product configurations</div>
-                    <div class="step-fragment">
-                        <img src="3Config_rec.png" alt="Bill of Materials">
+                    <div class="step-title">Post-Meeting Buyer Intelligence</div>
+                    <div class="step-desc">Track buyer intent, configuration engagement, and blockers as they self-serve — know exactly when and how to close.
+                        <span style="display:block; margin-top:10px; font-size:13px; line-height:1.7; color:var(--text-secondary);">
+                            📍 Tracks interactions with shared configuration details<br>
+                            📍 Alerts when docs are forwarded to stakeholders<br>
+                            📍 Flags technical concerns and pricing signals<br>
+                            📍 Know readiness, blockers, and commercial intent
+                        </span>
                     </div>
-                </div>
-                
-                <div class="step-item">
-                    <div class="step-number">4</div>
-                    <div class="step-title">Post-Meeting Buyer Visibility</div>
-                    <div class="step-desc">Track buyer's interactions with system configurations to reveal blockers and purchase readiness</div>
                     <div class="step-fragment">
-                        <img src="4Engage_rec.png" alt="Engagement Metrics">
+                        <img src="shaded.png" alt="Buyer intelligence and engagement signals">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- CTA #1 — Early escape for motivated readers -->
+    <div class="mini-cta-strip">
+        <div class="container">
+            <p class="mini-cta-strip-text">Ready to power up your sellers?</p>
+            <a href="https://calendly.com/portune-info/30min" target="_blank" rel="noopener" class="mini-cta-btn">
+                Book a Demo →
+            </a>
+        </div>
+    </div>
+
     <!-- Comparison -->
     <section class="comparison-section" id="benefits">
         <div class="container">
             <h2 class="section-title">Power Up Your Sales Team with Portune</h2>
-            
+
             <div class="comparison-wrapper">
                 <div class="comparison-grid">
                     <div class="comparison-header">
                         <div class="comparison-column-header before">WITHOUT PORTUNE</div>
                         <div class="comparison-column-header after">WITH PORTUNE</div>
                     </div>
-                    
+
                     <div class="comparison-category">
                         <span>Sales Power Up</span>
                     </div>
-                    
+
                     <div class="comparison-row">
                         <div class="comparison-item before">"Let me check with engineering..."</div>
-                        <div class="comparison-item after">"Let me answer your questions, and recommend a solution configuration."</div>
+                        <div class="comparison-item after">"Let me answer your questions and recommend a solution configuration."</div>
                     </div>
-                    
+
                     <div class="comparison-row">
-                        <div class="comparison-item before">Low buyer confidence, Ambiguous purchase intent</div>
+                        <div class="comparison-item before">Low buyer confidence, ambiguous purchase intent</div>
                         <div class="comparison-item after">High buyer confidence, strong purchase intent</div>
                     </div>
 
                     <div class="comparison-row">
                         <div class="comparison-item before">No visibility into buyer readiness or blockers</div>
-                        <div class="comparison-item after">Know buyer's technical, commercial blockers and readiness real-time</div>
+                        <div class="comparison-item after">Know buyer's technical and commercial blockers and readiness in real-time</div>
                     </div>
-                    
+
                     <div class="comparison-category">
                         <span>Presales Power Up</span>
                     </div>
-                    
+
                     <div class="comparison-row">
                         <div class="comparison-item before">Presales overwhelmed with routine requests</div>
-                        <div class="comparison-item after">2x presales productivity - release bottlenecks, focus on strategic deals</div>
+                        <div class="comparison-item after">2× presales productivity — release bottlenecks, focus on strategic deals</div>
                     </div>
-                    
+
                     <div class="comparison-row">
                         <div class="comparison-item before">40-hour weeks on repetitive quotes</div>
-                        <div class="comparison-item after">32% workload reduction - presales scales effortlessly</div>
+                        <div class="comparison-item after" style="flex-direction: column; gap: 4px; align-items: flex-start;">
+                            <span>30–40% workload reduction — presales scales effortlessly</span>
+                            <span class="comparison-source">Gartner, IDC</span>
+                        </div>
                     </div>
-                    
+
                     <div class="comparison-category">
                         <span>Sales Performance Power Up</span>
                     </div>
-                    
+
                     <div class="comparison-row">
                         <div class="comparison-item before">Buyer friction, delayed responses</div>
                         <div class="comparison-item after">Deliver technical guidance in every conversation</div>
                     </div>
-                    
+
                     <div class="comparison-row">
                         <div class="comparison-item before">Deals stall in critical moments</div>
-                        <div class="comparison-item after">close faster. beat the competition.</div>
+                        <div class="comparison-item after" style="flex-direction: column; gap: 4px; align-items: flex-start;">Close faster. Beat the competition.</div>
                     </div>
-                    
+
                     <div class="comparison-row">
-                        <div class="comparison-item before">38% of deals stall in presales</div>
-                        <div class="comparison-item after">Increase win rate 2x</div>
+                        <div class="comparison-item before">38% of deals stall waiting for presales</div>
+                        <div class="comparison-item after" style="flex-direction: column; gap: 4px; align-items: flex-start;">
+                            <span>Up to +47% win rate lift</span>
+                            <span class="comparison-source">McKinsey, 2015</span>
+                        </div>
                     </div>
                 </div>
+            </div>
+            <p class="metrics-disclaimer">
+                Metrics are based on third-party industry research and represent outcomes when buyer-facing technical friction is eliminated.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- ICP Checklist -->
+    <section class="icp-section" id="right-for-you">
+        <div class="container">
+            <div class="icp-card">
+                <h2 class="icp-title">Is Portune Right for You?</h2>
+                <p class="icp-subtitle">Ticking +4 boxes? Get ready to power up with Portune.</p>
+
+                <div class="icp-checklist">
+                    <div class="icp-item">
+                        <div class="icp-check">✓</div>
+                        <div class="icp-item-text">
+                            <strong>$100M+ annual revenue</strong>
+                            <span>Enterprise vendors and channel partners who can act on pipeline improvements at scale</span>
+                        </div>
+                    </div>
+                    <div class="icp-item">
+                        <div class="icp-check">✓</div>
+                        <div class="icp-item-text">
+                            <strong>10+ sales reps on your team</strong>
+                            <span>The presales bottleneck is felt across a team — not a single-rep problem</span>
+                        </div>
+                    </div>
+                    <div class="icp-item">
+                        <div class="icp-check">✓</div>
+                        <div class="icp-item-text">
+                            <strong>At least one presales engineer</strong>
+                            <span>You already know the bottleneck. Now multiply their output instead of hiring more.</span>
+                        </div>
+                    </div>
+                    <div class="icp-item">
+                        <div class="icp-check">✓</div>
+                        <div class="icp-item-text">
+                            <strong>Deal sizes up to $50K</strong>
+                            <span>High-volume, sub-$50K deals where presales overhead kills margins and velocity</span>
+                        </div>
+                    </div>
+                    <div class="icp-item">
+                        <div class="icp-check">✓</div>
+                        <div class="icp-item-text">
+                            <strong>Complex, configurable products</strong>
+                            <span>Build-to-suit hardware, multi-component IT infrastructure, networking, IoT, or telecom solutions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://calendly.com/portune-info/30min" target="_blank" rel="noopener"
+                   style="display: inline-flex; align-items: center; padding: 16px 40px; background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%); color: white; font-size: 16px; font-weight: 700; border-radius: 10px; text-decoration: none; box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3); transition: all 0.2s;">
+                    Book a Demo →
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Intelligence Callout -->
-    <section class="intelligence-section">
+    <!-- Team Section -->
+    <section class="team-section" id="team">
         <div class="container">
-            <div class="intelligence-content">
-                <h2 class="intelligence-title">Close More Deals with Post-Meeting Buyer Engagement Analytics</h2>
-                <p class="intelligence-subtitle">
-                    Portune tracks buyer's post-meeting interactions and alerts seller about the buyers technical, commercial concerns and purchase readiness
-                </p>
-                
-                <div class="intelligence-list">
-                    <div class="intelligence-item">
-                        <img src="Portune_avatar.png" alt="" class="intelligence-bullet-icon">
-                        <span>Track buyer's post-meeting interactions with configuration details</span>
-                    </div>
-                    <div class="intelligence-item">
-                        <img src="Portune_avatar.png" alt="" class="intelligence-bullet-icon">
-                        <span>Monitor when they share solution docs with internal stakeholders</span>
-                    </div>
-                    <div class="intelligence-item">
-                        <img src="Portune_avatar.png" alt="" class="intelligence-bullet-icon">
-                        <span>Get instant alerts revealing technical concerns and pricing engagement</span>
-                    </div>
-                    <div class="intelligence-item">
-                        <img src="Portune_avatar.png" alt="" class="intelligence-bullet-icon">
-                        <span>Know buyer readiness, blockers, and commercial intent—no guesswork, no blind spots</span>
-                    </div>
+            <!-- Trust intro replaces 'The Team' title -->
+            <div style="text-align:center; max-width:680px; margin:0 auto 56px;">
+                <div style="display:inline-flex; align-items:center; gap:12px; background:white; border:1px solid var(--border); border-radius:12px; padding:14px 24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(99,102,241,0.07);">
+                    <div style="width:28px; height:28px; background:linear-gradient(135deg,var(--accent),var(--purple)); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-weight:700; font-size:16px; flex-shrink:0;">✓</div>
+                    <span style="font-size:17px; font-weight:700; color:var(--text-primary);">Built by sales leaders for sales leaders</span>
                 </div>
-
-                <p class="intelligence-cta-text">
-                    <span class="gradient">Why fly blind? Align your sellers with the buyers concerns and intent in real-time.</span>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits -->
-    <section class="benefits-section" id="results">
-        <div class="container">
-            <h2 class="section-title">The Portune Advantage</h2>
-            
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-check">
-                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="benefit-icon-1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                            <circle cx="32" cy="14" r="10" stroke="url(#benefit-icon-1)" stroke-width="3" fill="none"/>
-                            <path d="M32 8V14L36 17" stroke="url(#benefit-icon-1)" stroke-width="2.5" stroke-linecap="round"/>
-                            <rect x="6" y="28" width="38" height="7" rx="2" fill="url(#benefit-icon-1)"/>
-                            <rect x="10" y="38" width="30" height="7" rx="2" fill="url(#benefit-icon-1)" opacity="0.7"/>
-                        </svg>
-                    </div>
-                    <div class="benefit-text">3x faster deal velocity (days, not weeks)</div>
-                </div>
-                
-                <div class="benefit-item">
-                    <div class="benefit-check">
-                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="benefit-icon-2" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                            <circle cx="25" cy="14" r="8" fill="url(#benefit-icon-2)"/>
-                            <path d="M14 42V32C14 26 18 23 25 23C32 23 36 26 36 32V42" stroke="url(#benefit-icon-2)" stroke-width="3" fill="none"/>
-                            <path d="M20 32L24 36L32 28" stroke="url(#benefit-icon-2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="benefit-text">Know what concerns the buyer and when to close</div>
-                </div>
-                
-                <div class="benefit-item">
-                    <div class="benefit-check">
-                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="benefit-icon-3" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                            <circle cx="15" cy="12" r="6" fill="url(#benefit-icon-3)"/>
-                            <path d="M8 38V28C8 24 11 22 15 22C19 22 22 24 22 28V38" stroke="url(#benefit-icon-3)" stroke-width="3" fill="none"/>
-                            <rect x="28" y="30" width="6" height="12" rx="1" fill="url(#benefit-icon-3)"/>
-                            <rect x="36" y="24" width="6" height="18" rx="1" fill="url(#benefit-icon-3)"/>
-                            <path d="M30 20L38 12M38 12L38 18M38 12L32 12" stroke="url(#benefit-icon-3)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="benefit-text">Why risk stalling for presales?! Advance the deal with valuable technical guidance</div>
-                </div>
-                
-                <div class="benefit-item">
-                    <div class="benefit-check">
-                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="benefit-icon-4" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                            <rect x="8" y="32" width="8" height="14" rx="1" fill="url(#benefit-icon-4)" opacity="0.6"/>
-                            <rect x="18" y="26" width="8" height="20" rx="1" fill="url(#benefit-icon-4)" opacity="0.8"/>
-                            <rect x="28" y="18" width="8" height="28" rx="1" fill="url(#benefit-icon-4)"/>
-                            <path d="M24 10L38 6M38 6L38 12M38 6L32 6" stroke="url(#benefit-icon-4)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="benefit-text">2x win rate increase with 32% presales workload reduction</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trust Section -->
-    <section class="trust-section">
-        <div class="container">
-            <div class="trust-content">
-                <div class="trust-badge">
-                    <div class="trust-badge-icon">✓</div>
-                    <div class="trust-badge-text">Built by sales leaders for sales leaders</div>
-                </div>
-                <p class="trust-text">
-                    20+ years in global tech enterprise sales and presales. We've lived this problem—watching deals stall, competitors move faster, and revenue slip through the presales bottleneck. Portune is the solution we wish we'd had.
+                <p style="font-size:17px; color:var(--text-secondary); line-height:1.65;">
+                    20+ years in global B2B tech enterprise sales and presales. We've lived this problem — watching deals stall, competitors move faster, and revenue slip through the presales bottleneck. Portune is the solution we wish we'd had.
                 </p>
             </div>
+
+            <div class="team-grid">
+                <!-- CEO -->
+                <div class="team-member">
+                    <div class="team-avatar">G.A.</div>
+                    <div class="team-name">Co-Founder &amp; CEO</div>
+                    <div class="team-title">Go-to-Market · Revenue · Product Vision</div>
+                    <div class="team-bio">
+                        20+ years in B2B tech leadership, enterprise presales, and revenue scale operations across IT, networking, and IoT markets. Brings deep firsthand knowledge of the presales bottleneck — and what it costs.
+                    </div>
+                    <div class="team-credentials">
+                        <span class="team-badge">2× Founder</span>
+                        <span class="team-badge">3× CXO</span>
+                        <span class="team-badge">Enterprise IT &amp; IoT</span>
+                    </div>
+                </div>
+
+                <!-- CTO -->
+                <div class="team-member">
+                    <div class="team-avatar">Z.S.</div>
+                    <div class="team-name">Co-Founder &amp; CTO</div>
+                    <div class="team-title">Engineering · AI Architecture · Product</div>
+                    <div class="team-bio">
+                        12+ years in full-stack engineering, AI system integration, and UX-driven product design. Architect of Portune's multi-agent guided selling engine and buyer intelligence layer.
+                    </div>
+                    <div class="team-credentials">
+                        <span class="team-badge">2× Founder</span>
+                        <span class="team-badge">2× CTO</span>
+                        <span class="team-badge">AI &amp; Full-Stack</span>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </section>
 
-    <!-- CTA -->
+    <!-- Design Partner Program -->
+    <section class="partner-section" id="partner">
+        <div class="container">
+            <div class="partner-accordion-card">
+                <div class="partner-acc-badge">
+                    <div class="partner-acc-badge-dot"></div>
+                    Design Partner Program — 4 spots left
+                </div>
+                <h2 class="partner-acc-title">Shape the Product. Lock In the Pricing.</h2>
+                <p class="partner-acc-subtitle">A 90-day pilot with 1 sales and 1 presales rep. No setup fees. No long-term commitment.</p>
+
+                <div class="accordion">
+                    <div class="accordion-item open">
+                        <button class="accordion-trigger" onclick="toggleAccordion(this)">
+                            <span class="accordion-trigger-left">
+                                <span class="accordion-icon-wrap">🎁</span>
+                                What You Get
+                            </span>
+                            <svg class="accordion-chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="accordion-body">
+                            <div class="accordion-inner">
+                                <ul class="accordion-list">
+                                    <li>Full platform access for 90 days</li>
+                                    <li>Catalog onboarding included</li>
+                                    <li>Priority feature development for your use cases</li>
+                                    <li>Design partner pricing locked in for life</li>
+                                    <li>Your data stays yours — fully isolated, never used to train shared models</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-trigger" onclick="toggleAccordion(this)">
+                            <span class="accordion-trigger-left">
+                                <span class="accordion-icon-wrap">🤝</span>
+                                What We Ask
+                            </span>
+                            <svg class="accordion-chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="accordion-body">
+                            <div class="accordion-inner">
+                                <ul class="accordion-list">
+                                    <li>1 sales rep and 1 presales rep use Portune in live sales cycles for 90 days</li>
+                                    <li>Bi-weekly 30-minute feedback call</li>
+                                    <li>~3 hours setup in week 1 (we do the heavy lifting)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="partner-acc-note">Fill in the form below — we'll reach out within 48 hours.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Qualification Form -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+<div class="contact-form" id="contactFormWrapper">
+                <div id="formContent">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="name">Full Name *</label>
+                            <input class="form-input" type="text" id="name" name="name" placeholder="Jane Smith" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="company">Company *</label>
+                            <input class="form-input" type="text" id="company" name="company" placeholder="Acme Corp" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="email">Work Email *</label>
+                        <input class="form-input" type="email" id="email" name="email" placeholder="jane@company.com" required>
+                    </div>
+
+                    <div class="form-section-label">About Your Sales Challenge</div><div class="form-group">
+                        <textarea class="form-textarea" id="bottleneck" name="bottleneck" placeholder="What are your sales &amp; presales bottlenecks?"></textarea>
+                    </div>
+
+                    <button type="button" class="form-button" onclick="submitForm()">Send</button>
+                </div>
+
+                <div class="form-success" id="formSuccess">
+                    <div class="form-success-icon">✓</div>
+                    <h3>You're on our radar.</h3>
+                    <p>We'll reach out within 48 hours. In the meantime, you can <a href="https://calendly.com/portune-info/30min" target="_blank" rel="noopener" style="color: var(--accent); font-weight: 600;">book a demo directly</a> if you prefer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book a Demo CTA -->
     <section class="cta-section" id="demo">
         <div class="container">
             <h2 class="cta-title">See Portune in Action</h2>
             <p class="cta-subtitle">
-                15-minute demo. See how your team achieves seller independence and 3-5x deal velocity.
+                A 30-minute call. No slides. We'll show you live how your team gains seller independence.
             </p>
-            
-            <!-- REPLACE WITH YOUR CALENDLY LINK -->
-            <a href="https://calendly.com/portune-info/30min" class="cta-button">Book a Demo</a>
-
-            <div class="design-partner-section">
-                <div class="design-partner-card">
-                    <div class="design-partner-header">
-                        <h3 class="design-partner-title">🚀 Design Partner Program</h3>
-                        <p class="design-partner-subtitle">
-                            Shape the future of presales automation. Join as one of our first design partners.
-                        </p>
-                    </div>
-
-                    <!-- Single Collapsible FAQ -->
-                    <details class="faq-master">
-                        <summary class="faq-master-summary">
-                            <span class="faq-toggle-text">View Program Details</span>
-                            <span class="faq-arrow">▼</span>
-                        </summary>
-                        <div class="faq-master-content">
-                            
-                            <!-- Question 1 -->
-                            <div class="faq-question">
-                                <h4>What do design partners get?</h4>
-                                <p>✅ <strong>Free access to Portune</strong> for 6 months (full platform, no feature limits)</p>
-                                <p>✅ <strong>Dedicated implementation support</strong> — we handle product catalog setup</p>
-                                <p>✅ <strong>Priority feature development</strong> for your specific use cases</p>
-                                <p>✅ <strong>Early adopter pricing lock-in</strong> after program ends</p>
-                                <p>✅ <strong>Co-marketing opportunity</strong> (optional, anonymized case study)</p>
-                            </div>
-
-                            <!-- Question 2 -->
-                            <div class="faq-question">
-                                <h4>What's the time commitment?</h4>
-                                <p><strong>Total: ~4-6 hours/month</strong></p>
-                                <p>• <strong>Setup phase (Week 1-2):</strong> 2-3 hours working with our team on product catalog integration</p>
-                                <p>• <strong>Pilot phase (Months 1-6):</strong> 2-3 reps use Portune in live sales cycles</p>
-                                <p>• <strong>Feedback sessions:</strong> Bi-weekly 30-minute calls to share insights and requests</p>
-                                <p>We make it easy — you focus on selling, we handle the technical heavy lifting.</p>
-                            </div>
-
-                            <!-- Question 3 -->
-                            <div class="faq-question">
-                                <h4>Who's the ideal design partner?</h4>
-                                <p>You're a great fit if you:</p>
-                                <p>✔ Sell <strong>complex, configurable products</strong> (build-to-suit hardware, multi-component solutions, IT infrastructure)</p>
-                                <p>✔ Have a <strong>presales bottleneck</strong> — deals stall waiting for technical resources</p>
-                                <p>✔ Handle <strong>high-volume deals</strong> (multiple quotes/week, many under $50K)</p>
-                                <p>✔ Want to <strong>empower your sales team</strong> to handle technical conversations independently</p>
-                            </div>
-
-                            <!-- Question 4 -->
-                            <div class="faq-question">
-                                <h4>What happens after 6 months?</h4>
-                                <p>You decide if Portune is delivering value:</p>
-                                <p>✅ <strong>Love it?</strong> Continue with locked-in early adopter pricing (significantly below standard rates)</p>
-                                <p>✅ <strong>Not the right fit?</strong> Walk away, no strings attached — you keep all configured data</p>
-                                <p>Our goal: prove ROI in the first 60 days so continuing is an obvious choice.</p>
-                            </div>
-
-                        </div>
-                    </details>
-
-                    <div class="design-partner-cta">
-                        <p style="font-size: 18px; color: var(--text-primary); font-weight: 600; margin-bottom: 16px;">
-                            Interested? Leave your details in the contact form below and we'll reach out.
-                        </p>
-                        <a href="#contact" class="design-partner-button">
-                            Go to Contact Form ↓
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form -->
-    <section class="contact-section" id="contact">
-        <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <form class="contact-form" action="#" method="POST">
-                <div class="form-group">
-                    <label class="form-label" for="name">Name *</label>
-                    <input class="form-input" type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="phone">Phone</label>
-                    <input class="form-input" type="tel" id="phone" name="phone">
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="email">Email *</label>
-                    <input class="form-input" type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="message">Message *</label>
-                    <textarea class="form-textarea" id="message" name="message" required></textarea>
-                </div>
-                <button type="submit" class="form-button">Send Message</button>
-            </form>
+            <a href="https://calendly.com/portune-info/30min" target="_blank" rel="noopener" class="cta-button">Book a Demo</a>
         </div>
     </section>
 
     <!-- Legal -->
+    <div class="section-divider"></div>
     <section class="legal-section">
         <div class="container">
             <p class="legal-text">
-                © 2025 Portune. All rights reserved. | 
-                <a href="mailto:info@portune.io">info@portune.io</a> | 
-                <a href="#">Privacy Policy</a> | 
+                © 2026 Portune. All rights reserved. |
+                <a href="mailto:info@portune.ai">info@portune.ai</a> |
+                <a href="#">Privacy Policy</a> |
                 <a href="#">Terms of Service</a>
             </p>
         </div>
     </section>
 
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('navMenu');
-            const hamburger = document.querySelector('.hamburger');
+        /*
+        ═══════════════════════════════════════════════════════════════════
+        GOOGLE SHEETS INTEGRATION — SETUP INSTRUCTIONS
+        ═══════════════════════════════════════════════════════════════════
+
+        1. Open your Google Sheet:
+           https://docs.google.com/spreadsheets/d/1WpJHGqwj75sgiQmxZaFlv1ysER2GwgYhl7E3jdt9MBg/
+
+        2. Set up header row (Row 1):
+           Timestamp | Name | Company | Email | Bottleneck
+
+        3. Go to Extensions → Apps Script. Replace all code with:
+
+        ─────────────────────────────────────────────
+        function doPost(e) {
+          try {
+            var sheet = SpreadsheetApp
+              .openById('1WpJHGqwj75sgiQmxZaFlv1ysER2GwgYhl7E3jdt9MBg')
+              .getActiveSheet();
+            var data = JSON.parse(e.postData.contents);
+            sheet.appendRow([
+              new Date(),
+              data.name       || '',
+              data.company    || '',
+              data.email      || '',
+              data.bottleneck || ''
+            ]);
+            return ContentService
+              .createTextOutput(JSON.stringify({ status: 'success' }))
+              .setMimeType(ContentService.MimeType.JSON);
+          } catch(err) {
+            return ContentService
+              .createTextOutput(JSON.stringify({ status: 'error', message: err.toString() }))
+              .setMimeType(ContentService.MimeType.JSON);
+          }
+        }
+        ─────────────────────────────────────────────
+
+        4. Click Deploy → New Deployment → Web App
+           - Execute as: Me
+           - Who has access: Anyone
+        5. Click Deploy → Copy the Web App URL
+        6. Paste it below, replacing YOUR_APPS_SCRIPT_URL_HERE
+        ═══════════════════════════════════════════════════════════════════
+        */
+        var APPS_SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+
+        function submitForm() {
+            var name       = document.getElementById('name').value.trim();
+            var company    = document.getElementById('company').value.trim();
+            var email      = document.getElementById('email').value.trim();
+
+            if (!name || !company || !email) {
+                alert('Please fill in your name, company, and work email.');
+                return;
+            }
+
+            var payload = {
+                name:       name,
+                company:    company,
+                email:      email,
+                bottleneck: document.getElementById('bottleneck').value.trim()
+            };
+
+            var btn = document.querySelector('.form-button');
+            btn.textContent = 'Sending…';
+            btn.disabled = true;
+
+            if (APPS_SCRIPT_URL === 'YOUR_APPS_SCRIPT_URL_HERE') {
+                // Dev mode: log to console, show success UI
+                console.log('Form payload (Apps Script not yet connected):', payload);
+                showFormSuccess();
+                return;
+            }
+
+            fetch(APPS_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(function() {
+                showFormSuccess();
+            })
+            .catch(function(err) {
+                console.error('Submission error:', err);
+                // Still show success — no-cors mode doesn't surface errors to users
+                showFormSuccess();
+            });
+        }
+
+        function showFormSuccess() {
+            document.getElementById('formContent').style.display = 'none';
+            var success = document.getElementById('formSuccess');
+            success.style.display = 'block';
+        }
+
+        // Nav toggle
+        function toggleAccordion(trigger) {
+            var item = trigger.closest('.accordion-item');
+            var isOpen = item.classList.contains('open');
+            // Close all items
+            document.querySelectorAll('.accordion-item').forEach(function(el) {
+                el.classList.remove('open');
+            });
+            // Open clicked one if it was closed
+            if (!isOpen) {
+                item.classList.add('open');
+            }
+        }
+
+        function toggleMenu() {            var menu = document.getElementById('navMenu');
+            var hamburger = document.querySelector('.hamburger');
             menu.classList.toggle('active');
             hamburger.classList.toggle('active');
         }
 
         function closeMenu() {
-            const menu = document.getElementById('navMenu');
-            const hamburger = document.querySelector('.hamburger');
+            var menu = document.getElementById('navMenu');
+            var hamburger = document.querySelector('.hamburger');
             menu.classList.remove('active');
             hamburger.classList.remove('active');
         }
 
-        // Close menu when clicking outside
         document.addEventListener('click', function(event) {
-            const menu = document.getElementById('navMenu');
-            const hamburger = document.querySelector('.hamburger');
-            const isClickInsideMenu = menu.contains(event.target);
-            const isClickOnHamburger = hamburger.contains(event.target);
-            
-            if (!isClickInsideMenu && !isClickOnHamburger && menu.classList.contains('active')) {
+            var menu = document.getElementById('navMenu');
+            var hamburger = document.querySelector('.hamburger');
+            if (!menu.contains(event.target) && !hamburger.contains(event.target) && menu.classList.contains('active')) {
                 closeMenu();
             }
         });
 
-        // Show/hide header CTA on scroll
-        let lastScroll = 0;
-        const header = document.querySelector('.header');
-        
+        // Sticky header CTA
+        var header = document.getElementById('mainHeader');
         window.addEventListener('scroll', function() {
-            const currentScroll = window.pageYOffset;
-            
-            // Show CTA after scrolling past hero (approximately 600px)
-            if (currentScroll > 600) {
+            if (window.pageYOffset > 600) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
-            
-            lastScroll = currentScroll;
         });
     </script>
 </body>
